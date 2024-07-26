@@ -14,3 +14,5 @@ environment {
             }
     }
 }
+
+/* Mvn clean deploy*/
