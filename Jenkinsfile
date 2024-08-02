@@ -1,5 +1,5 @@
 def registry = 'https://danyalkhanzada.jfrog.io/'
-def imageName = 'danyalkhanzada.jfrog.io/danyalkhanzada-docker/ttrend'
+def imageName = 'danyalkhanzada.jfrog.io/danyalkhanzada-docker-local/ttrend'
 def version   = '2.1.2'
 pipeline {
     agent {
@@ -57,7 +57,7 @@ pipeline {
             steps {
                 script {
                    echo '<--------------- Docker Publish Started --------------->'  
-                    docker.withRegistry(registry, 'artifactory_token'){
+                    docker.withRegistry(registry, 'artifact-cred'){
                         app.push()
                     }    
                    echo '<--------------- Docker Publish Ended --------------->'  
